@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="uz"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b78d1">
+<meta name="color-scheme" content="light dark">
+<title>Massani qanday oʻlchaymiz? — 7-sinf elektron dars</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%96%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<style>
+:root{--bg:#eef6fb;--cd:#fff;--tx:#12263a;--ac:#0b78d1;--ac2:#e3f1fc;--ok:#188a4b;--no:#c93636;--bd:#c9dded;--on:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0d1722;--cd:#162536;--tx:#e6eef6;--ac:#4fb0ff;--ac2:#1d3248;--bd:#2a4058;--on:#06213a}}
+:root[data-theme=dark]{--bg:#0d1722;--cd:#162536;--tx:#e6eef6;--ac:#4fb0ff;--ac2:#1d3248;--bd:#2a4058;--on:#06213a}
+:root[data-theme=light]{--bg:#eef6fb;--cd:#fff;--tx:#12263a;--ac:#0b78d1;--ac2:#e3f1fc;--bd:#c9dded;--on:#fff}
+*{box-sizing:border-box}html{scroll-padding-top:70px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;font:17px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--tx);-webkit-tap-highlight-color:transparent;overflow-wrap:anywhere}
+header{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:10px max(14px,env(safe-area-inset-right,0px)) 10px max(14px,env(safe-area-inset-left,0px));background:var(--cd);border-bottom:1px solid var(--bd)}
+h1{font-size:18px;margin:0;line-height:1.3}h2{margin:.2em 0 .5em;font-size:24px}h3{margin:.8em 0 .3em;font-size:19px}
+nav{display:flex;gap:6px;padding:8px 12px;overflow-x:auto;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+button,input,select{font:inherit;color:var(--tx)}
+button{cursor:pointer;border:1px solid var(--bd);background:var(--ac2);padding:8px 14px;border-radius:10px;min-height:42px;white-space:nowrap;touch-action:manipulation;-webkit-appearance:none;appearance:none}
+button:hover{border-color:var(--ac)}
+button.on,button.p{background:var(--ac);color:var(--on);border-color:var(--ac)}
+button:disabled{opacity:.75;cursor:default}
+main{max-width:960px;margin:0 auto;padding:6px 12px 48px}
+section{display:none;background:var(--cd);border:1px solid var(--bd);border-radius:16px;padding:18px}
+section.on{display:block}
+.box{background:var(--ac2);border-left:5px solid var(--ac);border-radius:10px;padding:12px 14px;margin:12px 0}
+.formula{background:var(--cd);border:1px solid var(--bd);border-radius:12px;padding:12px 14px;margin:10px 0;font:600 19px/1.6 system-ui,sans-serif;overflow-x:auto}
+.formula small{display:block;font:14px/1.5 system-ui,sans-serif;opacity:.85;margin-top:4px}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:8px 0}
+.lab{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start}
+@media(max-width:700px){.lab{grid-template-columns:1fr}h2{font-size:21px}}
+input[type=number],select{padding:8px;border-radius:8px;border:1px solid var(--bd);background:var(--bg);width:130px;min-height:42px}
+svg{display:block;width:100%;height:auto;max-width:380px;margin:0 auto}
+svg text{fill:var(--tx);font:13px system-ui,sans-serif}
+.res{font:600 17px/1.6 system-ui,sans-serif;background:var(--cd);border:1px dashed var(--ac);border-radius:12px;padding:10px 12px;margin-top:8px}
+.opt{display:block;width:100%;text-align:left;margin:6px 0;white-space:normal;min-height:48px}
+.ok{background:var(--ok)!important;color:#fff!important;border-color:var(--ok)!important}
+.no{background:var(--no)!important;color:#fff!important;border-color:var(--no)!important}
+.fb{font-weight:600;min-height:1.6em;margin:8px 0}
+.bar{height:8px;background:var(--bd);border-radius:6px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ac);transition:width .3s}
+.wts{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:8px;margin:8px 0}
+.wts button{min-height:48px}
+.wts button.on{background:var(--ok);color:#fff;border-color:var(--ok)}
+.pairs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pairs button{white-space:normal;text-align:center;min-height:56px}
+.pairs>div{display:grid;gap:8px;align-content:start}
+.hero{background:linear-gradient(120deg,#0b78d1,#2fb38b);color:#fff;border-radius:14px;padding:16px;margin-bottom:12px}
+.hero h2{color:#fff;margin:0 0 6px}
+table{width:100%;border-collapse:collapse;font-size:16px}th,td{text-align:left;padding:8px;border-top:1px solid var(--bd)}th{background:var(--ac2)}
+@media(max-width:480px){h1{font-size:16px}section{padding:14px}.pairs{grid-template-columns:1fr}}
+:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+#lg{display:none}body.guest #lg{display:flex;justify-content:center;padding:24px 12px}
+body.guest nav,body.guest main{display:none}
+.lgbox{width:100%;max-width:440px;background:var(--cd);border:1px solid var(--bd);border-radius:16px;padding:20px}
+.lgbox input{width:100%;padding:12px;border-radius:10px;border:1px solid var(--bd);background:var(--bg);font-size:16px;margin-top:4px}
+.tw{overflow-x:auto;margin-top:10px}
+#rtab th,#rtab td{padding:8px;border-top:1px solid var(--bd);white-space:nowrap}#rtab th{background:var(--ac2)}
+.me{font-weight:600;color:var(--ac)}
+</style></head><body class="guest">
+<header><h1>⚖️ Massani qanday oʻlchaymiz? · 7-sinf</h1><span class="me" id="me"></span><b>⭐ <span id="st">0</span></b><button id="lo" hidden>🚪 Chiqish</button></header>
+<div id="lg">
+<div class="lgbox">
+<h2>👋 Xush kelibsiz!</h2>
+<p>Darsga kirish uchun familiyangiz va ismingizni yozing. Natijangiz oʻqituvchining jadvaliga shu nom bilan tushadi.</p>
+<label class="sl">Familiya<input type="text" id="lf" maxlength="40" autocomplete="family-name" placeholder="Masalan: Karimov"></label>
+<label class="sl">Ism<input type="text" id="li" maxlength="40" autocomplete="given-name" placeholder="Masalan: Ali"></label>
+<p class="fb" id="lmsg"></p>
+<button class="p" id="lgo">Kirish ➜</button>
+</div>
+</div>
+<nav id="nv"></nav>
+<main>
+
+<!-- 1. KIRISH -->
+<section id="s0" class="on">
+<div class="hero"><h2>Qaysi biri ogʻirroq?</h2><p style="margin:0">Olma va bir litr sut. Sumka va stakan suv. Bularning massasini qanday aniqlaymiz? Bugun shu savolga javob topamiz.</p></div>
+<h3>🎯 Darsning maqsadi</h3>
+<ul>
+<li>Massa tushunchasini va uning birliklarini bilish (kg, g, mg, t);</li>
+<li>Tarozida jismning massasini toʻgʻri oʻlchash;</li>
+<li>Bir dona jismning massasini guruh orqali topish usulini oʻzlashtirish.</li>
+</ul>
+<div class="box"><b>Massa</b> — jismdagi moddaning miqdorini tavsiflovchi kattalik. Belgisi: <b>m</b>. Asosiy birligi — <b>kilogramm (kg)</b>.</div>
+<p><b>Oʻz-oʻzini tekshiring:</b> qaysi birlik massa oʻlchash uchun eng mos?</p>
+<div class="row"><button class="opt" data-q="a">Metr (m)</button><button class="opt" data-q="b">Kilogramm (kg)</button><button class="opt" data-q="c">Litr (l)</button></div>
+<p class="fb" id="f0"></p>
+</section>
+
+<!-- 2. NAZARIYA -->
+<section id="s1">
+<h2>📖 Nazariya</h2>
+<h3>Massa birliklari</h3>
+<div class="formula">1 t = 1000 kg<br>1 kg = 1000 g<br>1 g = 1000 mg</div>
+<p>Kundalik hayotda: un va shakar — <b>kg</b> yoki <b>g</b> da, dori — <b>mg</b> da, yuk mashinasining yuki — <b>t</b> da oʻlchanadi.</p>
+
+<h3>Tarozi bilan oʻlchash</h3>
+<ol>
+<li><b>Tarozini nolga keltiring.</b> Pallalar boʻsh boʻlganda muvozanat bor-yoʻqligini tekshiring.</li>
+<li>Jismni <b>chap pallaga</b> qoʻying.</li>
+<li><b>Toshlarni (gir) oʻng pallaga</b> katta toshdan kichigiga qarab qoʻying.</li>
+<li>Pallalar muvozanatlashgach, toshlarning massalarini <b>qoʻshing</b>. Yigʻindi — jismning massasi.</li>
+</ol>
+<div class="box"><b>Muhim:</b> tarozi nolga keltirilmasa, oʻlchov xato boʻladi. Jism bir pallada, toshlar ikkinchi pallada boʻlishi kerak. Ikkala pallaga ham jism qoʻymang.</div>
+
+<h3>Bir dona jismning massasi</h3>
+<p>Juda yengil jismning massasini bevosita oʻlchash qiyin. Shuning uchun <b>bir nechta bir xil jismni</b> birga tortib, umumiy massasini bir donaga boʻlamiz:</p>
+<div class="formula">m₁ = m_umumiy / n<small>n — jismlar soni. Masalan, 100 ta bir xil tugma 250 g boʻlsa, bitta tugma: 250 : 100 = 2,5 g.</small></div>
+
+<h3>Tarozining boʻlinma qiymati</h3>
+<p>Tarozi shkalasidagi ikki katta belgi orasidagi farqni oraliqdagi boʻlaklar soniga boʻling. Bu tarozining <b>eng kichik oʻlchash darajasi</b>.</p>
+<p><b>Oʻz-oʻzini tekshiring:</b> 2 kg 300 g massani grammda qanday yozamiz?</p>
+<div class="row"><button class="opt" data-q="a">2300 g</button><button class="opt" data-q="b">230 g</button><button class="opt" data-q="c">2030 g</button></div>
+<p class="fb" id="f1"></p>
+</section>
+
+<!-- 3. VIRTUAL TAROZI -->
+<section id="s2">
+<h2>⚖️ Virtual tarozi</h2>
+<p>Chap pallada jism bor. Oʻng pallaga toshlarni qoʻshib, tarozini <b>muvozanatga</b> keltiring. Har bir toshni bosib qoʻshing, qayta bosib olib tashlang.</p>
+<div class="lab">
+<div>
+<svg viewBox="0 0 300 230" id="sv" role="img" aria-label="Tarozi"></svg>
+<div class="res" id="o2"></div>
+<div class="row"><button class="p" id="nw">🔄 Yangi jism</button><button id="cl">↺ Toshlarni olib tashlash</button></div>
+</div>
+<div>
+<p>Toshlar (g):</p>
+<div class="wts" id="wts"></div>
+<p class="fb" id="f2"></p>
+</div>
+</div>
+</section>
+
+<!-- 4. HISOB -->
+<section id="s3">
+<h2>🧮 Birliklarni almashtirish</h2>
+<p>Qiymatni kiriting va birligini tanlang. Hamma birliklardagi natija chiqadi.</p>
+<div class="row"><input type="number" id="cv" value="2300" step="any" aria-label="Qiymat"><select id="cu" aria-label="Birlik"><option value="g">g</option><option value="kg">kg</option><option value="mg">mg</option><option value="t">t</option></select></div>
+<div class="res" id="o3"></div>
+<div class="box"><b>Maslahat:</b> kg dan g ga oʻtish uchun 1000 ga koʻpaytiriladi, g dan kg ga oʻtish uchun 1000 ga boʻlinadi.</div>
+<h3>Bir dona massasi</h3>
+<div class="box">100 ta bir xil tugmaning massasi <b>250 g</b>. Bitta tugmaning massasi necha gramm?</div>
+<div class="row"><input type="number" id="ans" step="any" inputmode="decimal" aria-label="Javob"> g <button class="p" id="chk">Tekshirish</button></div>
+<p class="fb" id="f3"></p>
+</section>
+
+<!-- 5. TEST -->
+<section id="s4">
+<h2>📝 Bilimni sinash</h2>
+<div class="bar"><i id="pb" style="width:0"></i></div>
+<p id="qn"></p><p><b id="qt"></b></p><div id="qo"></div><p class="fb" id="f4"></p>
+<button class="p" id="nx" hidden>Keyingisi ➜</button>
+</section>
+
+<!-- 6. O'YIN -->
+<section id="s5">
+<h2>🎮 O‘yin: birlik va asbob</h2>
+<p>Chap tomondagi tushunchani oʻng tomondagi toʻgʻri javob bilan juftlang. Har bir juftlik uchun 1 ⭐.</p>
+<div class="pairs" id="pr"></div>
+<p class="fb" id="f5"></p>
+<button id="rp">🔄 Yangi o‘yin</button>
+</section>
+
+<!-- 7. XULOSA -->
+<section id="s6">
+<h2>🏁 Xulosa</h2>
+<table>
+<tr><th>Tushuncha</th><th>Ta’rif</th></tr>
+<tr><td>Massa (m)</td><td>Jismdagi modda miqdori. Birligi: kg</td></tr>
+<tr><td>Tarozi</td><td>Massani toshlar bilan solishtirib oʻlchash asbobi</td></tr>
+<tr><td>Boʻlinma qiymati</td><td>Shkaladagi eng kichik oʻlchash darajasi</td></tr>
+<tr><td>Bir dona massasi</td><td>Umumiy massa ÷ jismlar soni</td></tr>
+</table>
+<div class="box" style="margin-top:14px"><b>Uyga vazifa:</b> 2,4 kg ni grammda, 3500 g ni kilogrammda ifodalang. Javob: 2400 g va 3,5 kg. Keyin uyingizdagi 20 ta bir xil narsaning massasini tarozida oʻlchab, bitta donasining massasini hisoblang.</div>
+<p>Yigʻilgan yulduzlar: <b id="fs">0</b> ⭐</p>
+<div class="box"><b>Natijani yuborish:</b> bu tugmani faqat bir marta bosing. Birinchi yuborilgan natija saqlanadi, keyingi urinishlar jadvalni oʻzgartirmaydi.</div>
+<div class="row"><button class="p" id="sub">📤 Natijani yuborish</button><span id="subst"></span></div>
+<div class="row"><button id="rs">🔁 Boshidan boshlash (mashq)</button></div>
+<p class="fb" id="rsm"></p>
+</section>
+
+<section id="s7">
+<h2>📊 Natijalar</h2>
+<p id="rnote"></p>
+<div class="row"><button id="rload">🔄 Yangilash</button></div>
+<div class="tw"><table id="rtab"><thead><tr><th>№</th><th>Familiya</th><th>Ism</th><th>Ball ⭐</th><th>Test</th><th>Tarozi</th><th>O‘yin</th><th>Hisob</th><th>Sana</th></tr></thead><tbody></tbody></table></div>
+</section>
+</main>
+
+<script>
+/* ===== SOZLASH: Google Apps Script veb-ilova manzili (quyida qoʻllanma) ===== */
+const RESULTS_URL="https://script.google.com/macros/s/AKfycbwkxJS8dH4XEXn8xLhH8hZnUITB5vsbEBB41SvxEdIzPtjUp1eVbzIA8kQRg0XxcbuT/exec";   // masalan: "https://script.google.com/macros/s/XXXX/exec"
+
+const $=s=>document.querySelector(s);
+const SEC=["Kirish","Nazariya","Tarozi","Hisob","Test","O‘yin","Xulosa","Natijalar"];
+const WEIGHTS=[500,200,100,50,20,10,5,2,1];
+const TO={t:1e6,kg:1e3,g:1,mg:1e-3};
+const NAME_RE=/^[\p{L}ʻʼ'‘’\- ]{2,40}$/u;
+const de=document.documentElement;
+
+let ME=null,P=null;
+const blank=()=>({stars:0,tr:0,quiz:null,pairs:0,calc:false,saved:false,done:{}});
+
+/* ---------- Kirish ---------- */
+const norm=s=>s.trim().replace(/\s+/g," ");
+const keyOf=(f,i)=>(f+" "+i).toLowerCase();
+function login(){
+  const f=norm($("#lf").value),i=norm($("#li").value);
+  if(!NAME_RE.test(f)||!NAME_RE.test(i)){$("#lmsg").textContent="Familiya va ismni toʻliq yozing (kamida 2 harf, faqat harflar).";return}
+  ME={fam:f,ism:i,key:keyOf(f,i)};
+  try{P=Object.assign(blank(),JSON.parse(localStorage.getItem("ms_p_"+ME.key))||{})}catch(e){P=blank()}
+  $("#me").textContent="👤 "+ME.fam+" "+ME.ism;
+  $("#lmsg").textContent="";
+  document.body.classList.remove("guest");
+  $("#lo").hidden=false;
+  resetPractice();
+  updStars();refreshSubmitUI();go(0);
+}
+$("#lgo").onclick=login;
+$("#lo").onclick=()=>{ME=null;P=null;document.body.classList.add("guest");$("#me").textContent="";$("#lo").hidden=true;
+  $("#lf").value="";$("#li").value="";$("#lmsg").textContent="";$("#st").textContent="0";$("#fs").textContent="0";$("#lf").focus()};
+["#lf","#li"].forEach(s=>$(s).addEventListener("keydown",e=>{if(e.key=="Enter")login()}));
+
+const saveP=()=>{if(!ME)return;try{localStorage.setItem("ms_p_"+ME.key,JSON.stringify(P))}catch(e){}};
+function updStars(){$("#st").textContent=P.stars;$("#fs").textContent=P.stars}
+const add=(k,n)=>{if(P.done[k])return;P.done[k]=1;P.stars+=n;updStars();saveP()};
+
+/* ---------- Navigatsiya ---------- */
+const go=i=>{
+  document.querySelectorAll("main>section").forEach((s,j)=>s.classList.toggle("on",i==j));
+  document.querySelectorAll("#nv button").forEach((b,j)=>b.classList.toggle("on",i==j));
+  window.scrollTo(0,0);
+  if(i==7)loadRes();
+};
+SEC.forEach((t,i)=>{const b=document.createElement("button");b.textContent=(i+1)+". "+t;b.onclick=()=>go(i);$("#nv").append(b)});
+
+/* ---------- Kun/tun ---------- */
+let tm="";try{tm=localStorage.getItem("ms_t")||""}catch(e){}
+if(tm)de.dataset.theme=tm;
+const dark=()=>de.dataset.theme?de.dataset.theme=="dark":matchMedia("(prefers-color-scheme:dark)").matches;
+const tb=document.createElement("button");tb.id="th";tb.setAttribute("aria-label","Kun/tun rejimi");
+const setT=()=>{tb.textContent=dark()?"☀️":"🌙";tb.title=dark()?"Kun rejimi":"Tun rejimi"};
+tb.onclick=()=>{const m=dark()?"light":"dark";de.dataset.theme=m;try{localStorage.setItem("ms_t",m)}catch(e){}setT()};
+$("header").append(tb);setT();
+
+/* ---------- Yordamchi ---------- */
+const fmt=x=>isFinite(x)?(+x.toPrecision(8)).toString().replace(".",","):"—";
+const sh=a=>a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(x=>x[1]);
+function quick(sel,fb,correct,okMsg,noMsg,key,pts){
+  document.querySelectorAll(sel).forEach(b=>b.onclick=()=>{
+    const ok=b.dataset.q==correct;
+    document.querySelectorAll(sel).forEach(x=>{x.disabled=true;if(x.dataset.q==correct)x.classList.add("ok")});
+    if(!ok)b.classList.add("no");
+    $(fb).textContent=ok?"✅ "+okMsg+(pts?" +"+pts+" ⭐":""):"❌ "+noMsg;
+    if(ok&&pts)add(key,pts);
+  });
+}
+quick("#s0 [data-q]","#f0","b","To‘g‘ri! Massaning asosiy birligi kilogramm.","Metr uzunlik, litr hajm birligi. Massa uchun kg ishlatiladi.","q0",1);
+quick("#s1 [data-q]","#f1","a","To‘g‘ri! 2 kg = 2000 g, 2000 + 300 = 2300 g.","Esda tuting: 1 kg = 1000 g. 2 kg 300 g = 2000 g + 300 g.","q1",1);
+
+/* ---------- Virtual tarozi ---------- */
+let obj=0,pan=[];
+function newObj(){obj=5+Math.floor(Math.random()*700);pan=[];drawScale();$("#f2").textContent=""}
+const sumR=()=>pan.reduce((a,b)=>a+b,0);
+function drawScale(){
+  const S=sumR(),d=S-obj,ang=Math.max(-25,Math.min(25,d*0.5)),bal=d===0;
+  $("#o2").innerHTML="Jism massasi: <b>"+obj+" g</b><br>Toshlar: <b>"+S+" g</b><br>"+(bal?"<b>✅ Muvozanat!</b>":(d<0?"Toshlar yetmaydi: yana "+(-d)+" g kerak":"Toshlar ortiqcha: "+d+" g ortiq"));
+  let s='<line x1="150" y1="30" x2="150" y2="200" stroke="var(--tx)" stroke-width="4"/><polygon points="130,220 170,220 150,200" fill="var(--ac)"/><line x1="60" y1="210" x2="240" y2="210" stroke="var(--tx)" stroke-width="4"/>';
+  s+='<g transform="translate(150,40) rotate('+ang+')"><line x1="-100" y1="0" x2="100" y2="0" stroke="var(--tx)" stroke-width="5"/>';
+  s+='<line x1="-100" y1="0" x2="-100" y2="40" stroke="var(--tx)"/><line x1="100" y1="0" x2="100" y2="40" stroke="var(--tx)"/>';
+  s+='<path d="M-125,40 H-75 L-80,62 H-120 Z" fill="var(--ac2)" stroke="var(--tx)"/><path d="M75,40 H125 L120,62 H80 Z" fill="var(--ac2)" stroke="var(--tx)"/>';
+  s+='<text x="-100" y="34" text-anchor="middle" font-size="12">'+obj+' g</text><text x="100" y="34" text-anchor="middle" font-size="12">'+S+' g</text></g>';
+  $("#sv").innerHTML=s;
+  if(bal&&!P.done["tr"+obj]){P.tr++;add("tr"+obj,1);saveP();$("#f2").textContent="🎉 Toʻgʻri! Massa "+obj+" g. +1 ⭐"}
+}
+const wbox=$("#wts");
+WEIGHTS.forEach(w=>{const b=document.createElement("button");b.textContent=w+" g";b.dataset.w=w;
+  b.onclick=()=>{const i=pan.indexOf(w);if(i>=0){pan.splice(i,1);b.classList.remove("on")}else{pan.push(w);b.classList.add("on")}drawScale()};
+  wbox.append(b)});
+$("#cl").onclick=()=>{pan=[];wbox.querySelectorAll("button").forEach(x=>x.classList.remove("on"));drawScale()};
+$("#nw").onclick=()=>{$("#cl").onclick();newObj()};
+newObj();
+
+/* ---------- Birlik ---------- */
+function conv(){const v=parseFloat($("#cv").value);const u=$("#cu").value;
+  if(isNaN(v)){$("#o3").textContent="Qiymat kiriting";return}
+  const g=v*TO[u];
+  $("#o3").innerHTML=fmt(v)+" "+u+" = <b>"+fmt(g/1e6)+" t</b><br><b>"+fmt(g/1000)+" kg</b><br><b>"+fmt(g)+" g</b><br><b>"+fmt(g*1000)+" mg</b>"}
+$("#cv").oninput=conv;$("#cu").onchange=conv;conv();
+$("#chk").onclick=()=>{const v=parseFloat($("#ans").value),f=$("#f3");
+  if(isNaN(v)){f.textContent="Avval javobni kiriting.";return}
+  if(Math.abs(v-2.5)<1e-9){f.textContent="✅ To‘g‘ri! 250 : 100 = 2,5 g. +2 ⭐";add("ans",2);saveP();P.calc=true;saveP()}
+  else{f.textContent="❌ Qayta tekshiring: umumiy massani donalar soniga bo‘ling."}};
+
+/* ---------- Test ---------- */
+const Q=[
+["Massaning asosiy birligi qaysi?",["Gramm (g)","Kilogramm (kg)","Tonna (t)","Milligramm (mg)"],1,"Asosiy birlik — kilogramm (kg)."],
+["1 kg necha gramm?",["10 g","100 g","1000 g","10 000 g"],2,"1 kg = 1000 g."],
+["5 g necha milligramm?",["50 mg","500 mg","5000 mg","0,005 mg"],2,"1 g = 1000 mg, demak 5 g = 5000 mg."],
+["Tarozi nima uchun oʻlchashdan oldin nolga keltiriladi?",["Chiroyli boʻlishi uchun","Boʻsh tarozi xatoni hisobga olmasligi uchun","Og‘irlikni oshirish uchun","Tezroq oʻlchash uchun"],1,"Nolga keltirilmasa, tarozining oʻzi oʻlchovga xato kiritadi."],
+["Shkalaning ikki katta belgisi orasi 10 g, oraliqda 5 boʻlak. Boʻlinma qiymati?",["1 g","2 g","5 g","10 g"],1,"10 : 5 = 2 g."],
+["Yengil jismning massasini oʻlchash uchun nima qilinadi?",["Bitta jismni tortiladi","Bir nechta bir xil jism tortilib, yigʻindisi donalar soniga boʻlinadi","Hajm oʻlchanadi","Jism suvga tashlanadi"],1,"Bir nechta donaning yigʻindisi n ga boʻlinsa, bitta donaning massasi chiqadi."],
+["3 t necha kilogramm?",["30 kg","300 kg","3000 kg","30 000 kg"],2,"1 t = 1000 kg, demak 3 t = 3000 kg."]
+];
+let qi=0,sc=0;
+function ask(){const q=Q[qi];$("#pb").style.width=(qi/Q.length*100)+"%";$("#qn").textContent="Savol "+(qi+1)+" / "+Q.length;$("#qt").textContent=q[0];$("#f4").textContent="";$("#nx").hidden=true;
+  const o=$("#qo");o.textContent="";
+  q[1].forEach((t,i)=>{const b=document.createElement("button");b.className="opt";b.textContent=t;
+    b.onclick=()=>{o.querySelectorAll("button").forEach((x,j)=>{x.disabled=true;if(j==q[2])x.classList.add("ok")});
+      if(i==q[2]){sc++;$("#f4").textContent="✅ To‘g‘ri! "+q[3]}else{b.classList.add("no");$("#f4").textContent="❌ "+q[3]}
+      $("#nx").hidden=false;$("#nx").textContent=qi==Q.length-1?"Natijani ko‘rish":"Keyingisi ➜"};
+    o.append(b)})}
+$("#nx").onclick=()=>{if(++qi<Q.length)return ask();
+  $("#pb").style.width="100%";$("#qo").textContent="";$("#qn").textContent="";
+  $("#qt").textContent="Natija: "+sc+" / "+Q.length+(sc>=6?" 🏆 Ajoyib!":sc>=4?" 👍 Yaxshi!":" 💪 Mavzuni qayta o‘qing");
+  $("#f4").textContent="";$("#nx").hidden=true;
+  if(P.quiz===null){P.quiz=sc;}
+  add("quiz",sc>=6?3:sc>=4?2:1);saveP()};
+ask();
+
+/* ---------- Juftlash o'yini ---------- */
+const PAIRS=[["Kilogramm (kg)","Massaning asosiy birligi"],["Gramm (g)","1 kg ning 0,001 qismi"],["Milligramm (mg)","1 g ning 0,001 qismi"],["Tarozi","Massani toshlar bilan solishtirib oʻlchaydi"]];
+let sel=null,found=0;
+function pairs(){found=0;sel=null;$("#f5").textContent="";
+  const L=sh(PAIRS.map(p=>p[0])),R=sh(PAIRS.map(p=>p[1]));
+  const box=$("#pr");box.innerHTML="";
+  const cl=document.createElement("div"),cr=document.createElement("div");
+  L.forEach(t=>{const b=document.createElement("button");b.textContent=t;b.dataset.side="L";b.dataset.k=t;cl.append(b)});
+  R.forEach(t=>{const b=document.createElement("button");b.textContent=t;b.dataset.side="R";b.dataset.k=t;cr.append(b)});
+  box.append(cl,cr);
+  box.onclick=e=>{const b=e.target.closest("button");if(!b||b.disabled)return;
+    if(b.dataset.side=="L"){box.querySelectorAll("[data-side=L]").forEach(x=>x.classList.remove("on"));b.classList.add("on");sel=b;return}
+    if(!sel){$("#f5").textContent="Avval chap tomondan tushunchani tanlang";return}
+    const ok=PAIRS.some(p=>p[0]==sel.dataset.k&&p[1]==b.dataset.k);
+    if(ok){sel.classList.remove("on");sel.classList.add("ok");b.classList.add("ok");sel.disabled=true;b.disabled=true;found++;
+      $("#f5").textContent="✅ To‘g‘ri juftlik! +1 ⭐";
+      P.pairs=Math.max(P.pairs,found);add("pair"+found+"_"+Math.random().toString(36).slice(2,6),1);saveP();
+      if(found==PAIRS.length)$("#f5").textContent="🏆 Barakalla! Hammasi to‘g‘ri topildi.";sel=null}
+    else{const s=sel;s.classList.remove("on");b.classList.add("no");s.classList.add("no");setTimeout(()=>{s.classList.remove("no");b.classList.remove("no")},600);$("#f5").textContent="❌ Boshqa javobni tanlang";sel=null}
+  }}
+$("#rp").onclick=pairs;pairs();
+
+/* ---------- Natijani yuborish ---------- */
+const LOCAL_ALL="ms_all";
+function payload(){return{key:ME.key,familiya:ME.fam,ism:ME.ism,ball:P.stars,
+  test:P.quiz===null?"—":P.quiz+"/"+Q.length,tarozi:P.tr,oyin:P.pairs+"/"+PAIRS.length,
+  hisob:P.calc?"✅":"❌",sana:new Date().toLocaleString("uz-UZ")}}
+function refreshSubmitUI(){
+  const b=$("#sub");
+  if(!ME){return}
+  if(P.saved){b.disabled=true;b.textContent="✅ Natija saqlangan";$("#subst").textContent="Natijangiz jadvalda. Qayta yuborib boʻlmaydi."}
+  else{b.disabled=false;b.textContent="📤 Natijani yuborish";$("#subst").textContent=""}
+}
+$("#sub").onclick=async()=>{
+  if(!ME||P.saved)return;
+  const b=$("#sub");b.disabled=true;$("#subst").textContent="Yuborilmoqda…";
+  const d=payload();let msg="";
+  try{
+    if(RESULTS_URL){
+      const r=await fetch(RESULTS_URL,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(d)});
+      const j=await r.json();
+      if(j.saved===false&&!j.ok){throw new Error(j.msg||"Server xatosi")}
+      P.saved=true;
+      msg=j.saved===false?"ℹ️ "+j.msg+". Yangi urinish saqlanmaydi.":"✅ Saqlandi";
+    }else{
+      // Serversiz rejim: faqat shu qurilmada
+      let all=[];try{all=JSON.parse(localStorage.getItem(LOCAL_ALL))||[]}catch(e){}
+      if(all.some(x=>x.key==ME.key)){P.saved=true;msg="ℹ️ Bu oʻquvchi natijasi allaqachon saqlangan."}
+      else{all.push(d);localStorage.setItem(LOCAL_ALL,JSON.stringify(all));P.saved=true;msg="✅ Saqlandi (faqat shu qurilmada)"}
+    }
+  }catch(e){
+    b.disabled=false;$("#subst").textContent="❌ Yuborishda xato: "+e.message+". Internetni tekshirib, qayta urinib koʻring.";return
+  }
+  saveP();refreshSubmitUI();$("#subst").textContent=msg;
+};
+
+/* ---------- Natijalar jadvali ---------- */
+async function loadRes(){
+  const note=$("#rnote"),tb=$("#rtab tbody");
+  tb.textContent="";
+  let rows=[];
+  try{
+    if(RESULTS_URL){
+      const r=await fetch(RESULTS_URL);const j=await r.json();rows=j.rows||[];
+      note.textContent="Barcha oʻquvchilarning birinchi natijalari. Jami: "+rows.length+" ta.";
+    }else{
+      try{rows=JSON.parse(localStorage.getItem(LOCAL_ALL))||[]}catch(e){rows=[]}
+      note.textContent="⚠️ Serverga ulanish sozlanmagan: bu yerda faqat shu qurilmadagi natijalar koʻrinadi. GitHub uchun RESULTS_URL ni kiriting.";
+    }
+  }catch(e){note.textContent="❌ Natijalarni yuklab boʻlmadi: "+e.message;return}
+  rows.forEach((x,i)=>{
+    const tr=document.createElement("tr");
+    const vals=[i+1,x.familiya,x.ism,x.ball,x.test,x.tarozi,x.oyin,x.hisob,x.sana];
+    vals.forEach(v=>{const td=document.createElement("td");td.textContent=v==null?"":String(v);tr.append(td)});
+    tb.append(tr);
+  });
+  if(!rows.length){const tr=document.createElement("tr");const td=document.createElement("td");td.colSpan=9;td.textContent="Hali natija yoʻq";tr.append(td);tb.append(tr)}
+}
+$("#rload").onclick=loadRes;
+
+/* ---------- Mashq holatini tozalash ---------- */
+function resetPractice(){qi=0;sc=0;ask();pairs();newObj();conv();$("#rsm").textContent="";$("#f3").textContent="";$("#ans").value=""}
+
+/* ---------- Mashq qayta boshlash (natija saqlanmaydi) ---------- */
+$("#rs").onclick=()=>{
+  if(!ME)return;
+  P.stars=0;P.done={};P.tr=0;
+  // Saqlangan natija (P.saved, P.quiz, P.pairs, P.calc) o'zgarmaydi
+  saveP();updStars();resetPractice();
+  $("#rsm").textContent=P.saved?"ℹ️ Mashq qayta boshlandi. Natijangiz oʻzgarmaydi: birinchi natija allaqachon saqlangan.":"ℹ️ Mashq qayta boshlandi.";
+  go(0);
+};
+
+</script>
+</body></html>
